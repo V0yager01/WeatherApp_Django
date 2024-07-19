@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <body>
+        <div class="container">
+            <form action="{% url 'weather:get_weather' %}" method="get">
+                <input type="text" name="city_name" placeholder="Enter city name">
+                <button type="submit">Get Weather</button>
+            </form>
+        {% block title%} {%endblock%}
+        {% block table%} {%endblock%}
+        {% block history%} {%endblock%}
+        </div>
+    </body>
+</html>

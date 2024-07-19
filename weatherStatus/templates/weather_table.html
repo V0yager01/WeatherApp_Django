@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title%}
+<h1>{{name}} {{coord}}</h1>
+{%endblock%}
+{%block table%}
+<table>
+    <thead>
+        <tr>
+            <th>Время</th>
+            <th>Температура °C</th>
+            <th>Погода</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in weather_status.items %}
+        <tr>
+            <td>{{key}} </td>
+            {% for temp in value %}
+            <td>{{temp}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}
+{%block history%}
+<ul>
+    <h2>История поиска</h2>
+    {% for name in city_history%}
+    <li><a href="{%url 'weather:get_weather'%}?city_name={{name}}">{{name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

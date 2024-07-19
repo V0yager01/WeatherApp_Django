@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title%}
+<h1>{{name}} не найден :(</h1>
+{%endblock%}
+{%block history%}
+<ul>
+    <h2>История поиска</h2>
+    {% for name in city_history%}
+    <li><a href="{%url 'weather:get_weather'%}?city_name={{name}}">{{name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
