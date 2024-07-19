@@ -18,7 +18,7 @@ WeatherApp - сайт, на котором пользователь может �
 ### Клонирование
 Клонируйте репозиторий
 ```
-git@github.com:V0yager01/WeatherApp_Django.git
+git clone git@github.com:V0yager01/WeatherApp_Django.git
 ```
 ### Запуск Docker compose 
 В директории запускаем docker-compose.yml
